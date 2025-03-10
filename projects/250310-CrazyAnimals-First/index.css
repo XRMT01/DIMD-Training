@@ -1,0 +1,177 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#app {
+    width: 100%;
+    height: 100vh;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#page {
+    width: 320px;
+    height: 520px;
+    background-color: black;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+@media (max-width: 320px) {
+    #page {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 320 / 520;
+    }
+}
+
+@media (max-height: 520px) {
+    #page {
+        width: auto;
+        height: 100%;
+        aspect-ratio: 320 / 520;
+    }
+}
+
+
+
+/* 背景 */
+#background{
+    width: 100%;
+    height: 100%;
+    background-image: url("./img/bg.jpg");
+    background-size: cover;
+    position: relative;
+    z-index: 0;
+}
+
+/* 音乐 */
+#musicPage{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: right;
+    color: white; /* 设置文字颜色为白色以便在黑色背景上显示 */
+}
+#musicPage #Bg{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.355);
+    border-radius: 50%;
+    border-style: solid;
+    border-color: #ffffff;
+    border-width: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#musicPage #Bg #Bg_Image{
+    width: 60%;
+    height: 60%;
+    animation: roate360 1s linear infinite;
+}
+
+@keyframes roate360{
+    from{
+        transform: rotate(0deg);
+    }to{
+        transform: rotate(360deg);
+    }
+}
+
+/* 背景内容 */
+#bgContent {
+    position: absolute;
+    width: 100%; /* 设置一个合适的宽度 */
+    height: 100%; /* 设置一个合适的高度，使其成为长方形 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white; /* 设置文字颜色为白色以便在黑色背景上显示 */
+    z-index: -1; /* 确保在 content 之下 */
+    
+}
+
+#bgContent #box {
+    width: 330px;
+    height: 50px;
+    background-color: bisque;
+    animation: moveDiagonally 5s linear infinite; /* 应用动画 */
+}
+
+/* 定义动画 */
+@keyframes moveDiagonally {
+    0% {
+        top: 0;
+        left: 0;
+        rotate: -45deg;
+    }
+    100% {
+        top: calc(330 - 50px); /* 调整为合适的值，与 height 对应 */
+        left: calc(100% - 100px); /* 调整为合适的值，与 width 对应 */
+        rotate: -45deg;
+    }
+}
+
+/* 内容部分 */
+
+#content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 确保子元素在垂直方向上均匀分布 */
+    z-index: 10;
+}
+
+.content-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#top,
+#centre,
+#bottom {
+    flex: 1; /* 确保每个部分占据相等的空间 */
+}
+
+#p1{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#p1 #Top_Image{
+    width: 100%;
+    height: 80px;
+}
+#p1 #progress-container {
+    width: 80%;
+    height: 40px;
+    background-image: url("./img/loadbg.png");
+    background-size: 100% 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+#p1 #progress-bar {
+    width: 0%; /* 进度条的初始宽度 */
+    height: 70%;
+    margin-left: 7.5px;
+    background-image: url("./img/load.png");
+    background-size: 100% 100%;
+    transition: width 0.5s ease; /* 平滑过渡效果 */
+}
