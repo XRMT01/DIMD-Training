@@ -150,9 +150,20 @@ html, body {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    
     align-items: center;
 }
+#top #p1{
+    justify-content: flex-start;
+}
+#centre #p1{
+    justify-content: center;
+}
+#bottom #p1{
+    justify-content: flex-end;
+}
+
+
 #p1 #Top_Image{
     width: 100%;
     height: 80px;
@@ -174,4 +185,8 @@ html, body {
     background-image: url("./img/load.png");
     background-size: 100% 100%;
     transition: width 0.5s ease; /* 平滑过渡效果 */
+}
+#p1 #charcter{
+    width: 80%;
+    height: 80%;
 }
