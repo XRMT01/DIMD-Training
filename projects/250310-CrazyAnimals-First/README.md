@@ -13,7 +13,21 @@ markdown
 
 为了保持仓库的整洁和有序性，我们采用了以下的文件架构：
 ```
-DIMD-Training/ │ ├── README.md # 仓库的总体介绍 ├── .gitignore # Git忽略文件列表 ├── CONTRIBUTING.md # 贡献指南文档 ├── LICENSE # 开源许可证 └── projects/ # 所有项目的根目录 ├── 250310-CrazyAnimals-First/ │ ├── assets/ # 存放项目资源文件，如图片、视频等 │ ├── src/ # 源代码或主要项目文件 │ └── README.md # 本项目的说明文档 └── ...
+DIMD-Training/ 
+│ 
+├── README.md # 仓库的总体介绍 
+├── .gitignore # Git忽略文件列表 
+├── CONTRIBUTING.md # 贡献指南文档 
+├── LICENSE # 开源许可证 
+└── projects/ # 所有项目的根目录 
+├── 250310-CrazyAnimals-First/ 
+│ 
+├── assets/ # 存放项目资源文件，如图片、视频等 
+│ 
+├── src/ # 源代码或主要项目文件 
+│ 
+└── README.md # 本项目的说明文档 
+└── ...
 ```
 每个具体的项目都应该遵循上述的结构，确保所有必要的组件都得到适当的分类和存放。
 
