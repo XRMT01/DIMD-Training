@@ -1,3 +1,4 @@
+/* 基础样式 */
 html, body {
     height: 100%;
     margin: 0;
@@ -37,138 +38,166 @@ html, body {
     }
 }
 
-
-
 /* 背景 */
-#background{
+#background {
     width: 100%;
     height: 100%;
     background-image: url("./img/bg.jpg");
     background-size: cover;
     position: relative;
     z-index: 0;
+    overflow: hidden;
 }
 
-/* 音乐 */
-#musicPage{
+/* 音乐按钮 */
+#musicPage {
     position: absolute;
     right: 20px;
     top: 20px;
     width: 40px;
     height: 40px;
     display: flex;
-    justify-content: right;
-    color: white; /* 设置文字颜色为白色以便在黑色背景上显示 */
+    justify-content: center;
+    align-items: center;
+    color: white;
 }
-#musicPage #Bg{
+
+#musicPage #Bg {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.355);
     border-radius: 50%;
-    border-style: solid;
-    border-color: #ffffff;
-    border-width: 1px;
+    border: 1px solid #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-#musicPage #Bg #Bg_Image{
+
+#musicPage #Bg #Bg_Image {
     width: 60%;
     height: 60%;
-    animation: roate360 1s linear infinite;
+    animation: rotate360 1s linear infinite;
 }
 
-@keyframes roate360{
-    from{
-        transform: rotate(0deg);
-    }to{
-        transform: rotate(360deg);
-    }
+@keyframes rotate360 {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 /* 背景内容 */
 #bgContent {
     position: absolute;
-    width: 100%; /* 设置一个合适的宽度 */
-    height: 100%; /* 设置一个合适的高度，使其成为长方形 */
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white; /* 设置文字颜色为白色以便在黑色背景上显示 */
-    z-index: -1; /* 确保在 content 之下 */
-    
+    color: white;
+    z-index: -1;
 }
 
-#bgContent #box {
-    width: 330px;
-    height: 50px;
+#bgContent #box,#box1 {
+    position: absolute; /* 添加 position 属性 */
+    width: 500px;
+    height: 100px;
     background-color: bisque;
-    animation: moveDiagonally 5s linear infinite; /* 应用动画 */
+    visibility: hidden;
+    
+}
+#bgContent #box{
+    animation: moveDiagonally 5s linear 3s infinite;
+}
+#bgContent #box1{
+    animation: moveDiagonally 5s linear infinite;
+}
+#bgContent .pattern{
+    position: relative;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+#bgContent #p1{
+
+}
+#bgContent .pattern .patternitem{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 30px;
+    height: 30px;
+    animation: patternSwitch 2s linear infinite;
+}
+
+@keyframes patternSwitch{
+    0% {
+        content: url("./img/圆点.png");
+    }
+    100%{
+        content: url("./img/星星.png");
+    }
 }
 
 /* 定义动画 */
 @keyframes moveDiagonally {
     0% {
-        top: 0;
-        left: 0;
-        rotate: -45deg;
+        visibility: visible;
+        top: -100px;
+        left: -180px;
+        transform: translate(0, 0) rotate(-25deg);
     }
     100% {
-        top: calc(330 - 50px); /* 调整为合适的值，与 height 对应 */
-        left: calc(100% - 100px); /* 调整为合适的值，与 width 对应 */
-        rotate: -45deg;
+        visibility: visible;
+        top: 500px;
+        left: -50px;
+        transform: translate(0, 0) rotate(-25deg);
     }
 }
 
 /* 内容部分 */
-
 #content {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* 确保子元素在垂直方向上均匀分布 */
+    justify-content: space-between;
     z-index: 10;
 }
 
 .content-section {
-    width: 100%;
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-#top,
-#centre,
-#bottom {
-    flex: 1; /* 确保每个部分占据相等的空间 */
-}
-
-#p1{
+#p1 {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    
     align-items: center;
 }
-#top #p1{
+
+#top #p1 {
     justify-content: flex-start;
 }
-#centre #p1{
+
+#centre #p1 {
     justify-content: center;
 }
-#bottom #p1{
+
+#bottom #p1 {
     justify-content: flex-end;
 }
 
-
-#p1 #Top_Image{
+#Top_Image {
     width: 100%;
     height: 80px;
 }
-#p1 #progress-container {
+
+#progress-container {
     width: 80%;
     height: 40px;
     background-image: url("./img/loadbg.png");
@@ -178,15 +207,26 @@ html, body {
     align-items: center;
 }
 
-#p1 #progress-bar {
-    width: 0%; /* 进度条的初始宽度 */
+#progress-bar {
+    width: 0%;
     height: 70%;
     margin-left: 7.5px;
     background-image: url("./img/load.png");
     background-size: 100% 100%;
-    transition: width 0.5s ease; /* 平滑过渡效果 */
+    transition: width 0.5s ease;
 }
-#p1 #charcter{
+
+#charcter {
     width: 80%;
     height: 80%;
+    animation: charcterStatr 1s ease;
+}
+
+@keyframes charcterStatr{
+    0% {
+        transform: translateY(200px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
 }
