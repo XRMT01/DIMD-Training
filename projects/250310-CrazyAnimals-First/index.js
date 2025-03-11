@@ -90,7 +90,6 @@ function startImageAnimation() {
             img.classList.remove('fade-in'+ index);
             img.classList.add('roate'+ index);
             img.addEventListener('animationend', () => {
-                // 动画结束后调整 z-index
                 if (index === 0) {
                     img.style.zIndex = 3;
                 } else if (index === 1) {
