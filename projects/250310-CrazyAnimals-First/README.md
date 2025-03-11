@@ -40,7 +40,7 @@ DIMD-Training/
 ## P1-P2界面效果
 
 <div> 
-   <video src="./preview/P1-P2.gif" controls>
+   <video src="preview/P1-P2.gif" controls>
    </video>
 </div>
 
