@@ -39,9 +39,9 @@ DIMD-Training/
 
 ## P1-P2界面效果
 
-<html> 
-<video src="./preview/P1-P2.gif"></video>
-</html>
+<div> 
+   <video src="./preview/P1-P2.gif"></video>
+</div>
 
 ## 项目结构说明
 
