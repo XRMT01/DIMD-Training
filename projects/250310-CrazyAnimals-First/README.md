@@ -38,7 +38,9 @@ DIMD-Training/
 “疯狂动物”是一个基于HTML、CSS和JavaScript开发的H5小游戏。该项目旨在通过动画效果和交互设计提供一个有趣的游戏体验。
 
 ## P1-P2界面效果
+```
 <video src="./preview/P1-P2.gif"></video>
+```
 
 ## 项目结构说明
 
