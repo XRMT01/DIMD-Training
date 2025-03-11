@@ -72,8 +72,11 @@ function VisibilityAllElements(id,state) {
     const p1Elements = document.querySelectorAll('#p'+id);
     p1Elements.forEach(element => {
         if(state){
+            playChildAnimations(element,state)
             element.style.visibility = 'visible';
+            
         }else{
+            playChildAnimations(element,state)
             element.style.visibility = 'hidden';
         }
     });
@@ -101,4 +104,16 @@ function startImageAnimation() {
             });
         });
     }, 5000);
+}
+
+// 播放子级所有动画
+function playChildAnimations(parentElement,state) {
+    const childElements = parentElement.querySelectorAll('*');
+    childElements.forEach(childElement => {
+        if(state){
+            childElement.style.animationPlayState = 'running';
+        }else{
+            childElement.style.animationPlayState = 'paused';
+        }
+    });
 }

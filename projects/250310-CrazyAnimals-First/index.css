@@ -1,5 +1,6 @@
 /* 基础样式 */
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
     padding: 0;
@@ -37,6 +38,7 @@ html, body {
         aspect-ratio: 320 / 520;
     }
 }
+
 
 /* 背景 */
 #background {
@@ -81,8 +83,13 @@ html, body {
 }
 
 @keyframes rotate360 {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /* 背景内容 */
@@ -97,31 +104,36 @@ html, body {
     z-index: -1;
 }
 
-#bgContent #box,#box1 {
-    position: absolute; /* 添加 position 属性 */
+#bgContent #box,
+#box1 {
+    position: absolute;
+    /* 添加 position 属性 */
     width: 500px;
     height: 100px;
     background-color: bisque;
     visibility: hidden;
-    
+
 }
-#bgContent #box{
+
+#bgContent #box {
     animation: moveDiagonally 5s linear 3s infinite;
 }
-#bgContent #box1{
+
+#bgContent #box1 {
     animation: moveDiagonally 5s linear infinite;
 }
-#bgContent .pattern{
+
+#bgContent .pattern {
     position: relative;
     left: 0px;
     top: 0px;
     width: 100%;
     height: 100%;
 }
-#bgContent #p1{
 
-}
-#bgContent .pattern .patternitem{
+#bgContent #p1 {}
+
+#bgContent .pattern .patternitem {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -130,11 +142,12 @@ html, body {
     animation: patternSwitch 2s linear infinite;
 }
 
-@keyframes patternSwitch{
+@keyframes patternSwitch {
     0% {
         content: url("./img/圆点.png");
     }
-    100%{
+
+    100% {
         content: url("./img/星星.png");
     }
 }
@@ -147,6 +160,7 @@ html, body {
         left: -180px;
         transform: translate(0, 0) rotate(-25deg);
     }
+
     100% {
         visibility: visible;
         top: 500px;
@@ -175,7 +189,9 @@ html, body {
     position: relative;
 }
 
-#p1,#p2 {
+#p1,
+#p2,
+#p3 {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -187,12 +203,14 @@ html, body {
     justify-content: center;
 }
 
+
+/* p1 */
 #top #p1 {
     justify-content: flex-start;
 }
 
 #centre #p1 {
-    
+
     justify-content: center;
 }
 
@@ -227,10 +245,11 @@ html, body {
     animation: charcterStatr 1s ease;
 }
 
-@keyframes charcterStatr{
+@keyframes charcterStatr {
     0% {
         transform: translateY(200px);
     }
+
     100% {
         transform: translateY(0px);
     }
@@ -244,23 +263,28 @@ html, body {
     height: 80px;
     animation: top_image_move 1.5s ease;
 }
-@keyframes top_image_move{
+
+@keyframes top_image_move {
     0% {
         transform: translateY(-200px);
     }
+
     100% {
         transform: translateY(0px);
     }
 }
+
 #top #p2 #title {
     color: white;
 }
-#centre #p2{
+
+#centre #p2 {
     position: relative;
     top: 0px;
     left: 0px;
 }
-#centre #p2 #album{
+
+#centre #p2 #album {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -271,6 +295,7 @@ html, body {
     justify-content: center;
     align-items: center;
 }
+
 #centre #p2 #album #album-item {
     width: 280px;
     height: 180px;
@@ -281,9 +306,10 @@ html, body {
     position: relative;
     top: 0px;
     left: 0px;
-    
+
 }
-#centre #p2 #album #album-item #imgs{
+
+#centre #p2 #album #album-item #imgs {
     width: 100%;
     height: 100%;
     border: 5px solid #ffffff;
@@ -292,74 +318,148 @@ html, body {
     left: 0px;
     transform-origin: bottom right;
 }
-.fade-in0{
-    
-    animation: fade-in 2s  ease-in-out;
+
+.fade-in0 {
+
+    animation: fade-in 2s ease-in-out;
 }
-.fade-in1{
+
+.fade-in1 {
     animation-delay: 4s;
     animation: fade-in 4s ease-in-out;
 }
-.fade-in2{
+
+.fade-in2 {
     animation-delay: 8s;
     animation: fade-in 8s ease-in-out;
 }
-@keyframes fade-in{
-    0%{
+
+@keyframes fade-in {
+    0% {
         opacity: 0;
     }
-    100%{
+
+    100% {
         opacity: 1;
     }
 }
 
 /* 旋转 */
-.roate0{
-    
+.roate0 {
+
     animation: roate0 2s ease forwards;
 }
-.roate1{
+
+.roate1 {
     animation-delay: 4s;
     animation: roate1 4s ease forwards;
 }
-.roate2{
+
+.roate2 {
     animation-delay: 8s;
-    animation: roate2 8s ease forwards  ;
+    animation: roate2 8s ease forwards;
 }
-@keyframes roate0{
-    0%{
+
+@keyframes roate0 {
+    0% {
         transform: rotate(360deg);
-        
+
     }
-    100%{
+
+    100% {
         transform: rotate(-5deg);
     }
 }
-@keyframes roate1{
-    0%{
+
+@keyframes roate1 {
+    0% {
         transform: rotate(360deg);
-        
+
     }
-    100%{
+
+    100% {
         transform: rotate(-10deg);
     }
 }
-@keyframes roate2{
-    0%{
+
+@keyframes roate2 {
+    0% {
         transform: rotate(360deg);
     }
-    100%{
-        
+
+    100% {
+
         transform: rotate(-15deg);
     }
 }
 
 
-#p2_button{
+#p2_button {
     width: 100px;
     height: 60px;
     border: none;
     border-radius: 15%;
     box-shadow: 1px 7px 1px 0px rgb(0, 81, 255);
     color: rgb(0, 81, 255);
+}
+
+/* P3-1 */
+#p3 #title {
+    width: 80%;
+    height: 50%;
+}
+
+#centre #p3 {
+    flex-direction: row;
+    justify-content: left;
+}
+
+#p3 #GameRule {
+    width: 120px;
+    height: 60px;
+    background-image: url("./img/标签.png");
+    background-size: 100% 100%;
+    position: relative;
+    left: -20px;
+    animation: GameRule_move 1.5s ease;
+    animation-play-state: paused;
+}
+
+@keyframes GameRule_move {
+    0% {
+        transform: translateX(-100px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+#p3 #GameRule #text {
+    margin-left: 25px;
+    color: #ffffff;
+}
+
+#bottom #p3 {
+    justify-content: flex-start;
+}
+
+#p3_button {
+    border: none;
+    width: 150px;
+    height: 120px;
+    background-color: #fd6e00;
+    border-radius: 15%;
+    font-size: 45px;
+    color: #fff;
+    animation: p3_button 1s ease;
+}
+
+@keyframes p3_button {
+    0% {
+        transform: rotate(0deg) scale(0);
+    }
+    100% {
+        transform: rotate(720deg) scale(1);
+    }
 }
