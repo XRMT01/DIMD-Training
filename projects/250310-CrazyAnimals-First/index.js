@@ -14,7 +14,7 @@ let _index = 1;
 function increaseProgress() {
     
     if (progressWidth < 100) {
-        progressWidth += 20; // 每次增加1%
+        progressWidth += 5; // 每次增加1%
         progressBar.style.width = progressWidth + '%';
         
         //console.log(progressWidth);
@@ -26,6 +26,7 @@ function increaseProgress() {
         VisibilityAllElements(_index,false)
         _index++;
         VisibilityAllElements(_index,true)
+        startImageAnimation();
     }
     progressText.innerText = "已加载"+progressWidth + '%';
 }
@@ -76,4 +77,28 @@ function VisibilityAllElements(id,state) {
             element.style.visibility = 'hidden';
         }
     });
+}
+
+// 启动图片动画
+function startImageAnimation() {
+    const albumItems = document.querySelectorAll('#centre #p2 #album #album-item #imgs');
+    albumItems.forEach((img, index) => {
+        img.classList.add('fade-in'+ index);
+    });
+    setTimeout(() => {
+        albumItems.forEach((img, index) => {
+            img.classList.remove('fade-in'+ index);
+            img.classList.add('roate'+ index);
+            img.addEventListener('animationend', () => {
+                // 动画结束后调整 z-index
+                if (index === 0) {
+                    img.style.zIndex = 3;
+                } else if (index === 1) {
+                    img.style.zIndex = 2;
+                } else if (index === 2) {
+                    img.style.zIndex = 1;
+                }
+            });
+        });
+    }, 5000);
 }
