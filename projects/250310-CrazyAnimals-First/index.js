@@ -10,6 +10,9 @@ let Hmin = 0;
 let Wmax = 320;
 let Wmin = 0;
 let _index = 1;
+
+
+let pages = ["1","2","3-1","3-2","3-3","3-4","3-5"]
 // 增加进度的函数
 function increaseProgress() {
     
@@ -23,10 +26,10 @@ function increaseProgress() {
         progressWidth = 0;
         progressBar.style.width = progressWidth + '%';
         clearInterval(intervalId);
-        VisibilityAllElements(_index,false)
-        _index++;
-        VisibilityAllElements(_index,true)
+        VisibilityAllElements(pages[0],false)
+        VisibilityAllElements(pages[1],true)
         startImageAnimation();
+
     }
     progressText.innerText = "已加载"+progressWidth + '%';
 }
@@ -39,18 +42,37 @@ window.onload = function() {
 
     // 设置定时器，每100毫秒调用一次increaseProgress函数
     intervalId = setInterval(increaseProgress, 100);
-    for (let index = 1; index < 10; index++) {
-        VisibilityAllElements(index,false)
-    }
-    VisibilityAllElements(_index,true)
+    pages.forEach(element => {
+        VisibilityAllElements(element,false);
+    });
+    
+
+    VisibilityAllElements(pages[0],true)
     patternPos();
+    
 
-
-    // 按钮注册
+    // 按钮注册界面二
     document.getElementById("p2_button").addEventListener("click", function() {
-        VisibilityAllElements(_index,false)
-        _index++
-        VisibilityAllElements(_index,true)
+        VisibilityAllElements(pages[1],false);
+        VisibilityAllElements(pages[2],true);
+    })
+
+    // 按钮注册界面3-1
+    document.getElementById("p3-1_button").addEventListener("click", function() {
+        VisibilityAllElements(pages[2],false);
+        VisibilityAllElements(pages[4],true);
+    })
+    
+    // 按钮规则
+    document.getElementById("GameRule").addEventListener("click", function() {
+        VisibilityAllElements(pages[2],false);
+        VisibilityAllElements(pages[3],true);
+    })
+
+    // 规则关闭
+    document.getElementById("p3-2_close").addEventListener("click", function() {
+        VisibilityAllElements(pages[3],false);
+        VisibilityAllElements(pages[2],true);
     })
 };
 
@@ -74,7 +96,6 @@ function VisibilityAllElements(id,state) {
         if(state){
             playChildAnimations(element,state)
             element.style.visibility = 'visible';
-            
         }else{
             playChildAnimations(element,state)
             element.style.visibility = 'hidden';
@@ -82,7 +103,7 @@ function VisibilityAllElements(id,state) {
     });
 }
 
-// 启动图片动画
+// P2 图片动画
 function startImageAnimation() {
     const albumItems = document.querySelectorAll('#centre #p2 #album #album-item #imgs');
     albumItems.forEach((img, index) => {

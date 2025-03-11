@@ -191,7 +191,7 @@ body {
 
 #p1,
 #p2,
-#p3 {
+#p3-1 {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -404,17 +404,17 @@ body {
 }
 
 /* P3-1 */
-#p3 #title {
+#p3-1 #title {
     width: 80%;
     height: 50%;
 }
 
-#centre #p3 {
+#centre #p3-1{
     flex-direction: row;
     justify-content: left;
 }
 
-#p3 #GameRule {
+#p3-1 #GameRule {
     width: 120px;
     height: 60px;
     background-image: url("./img/标签.png");
@@ -435,16 +435,16 @@ body {
     }
 }
 
-#p3 #GameRule #text {
+#p3-1 #GameRule #text {
     margin-left: 25px;
     color: #ffffff;
 }
 
-#bottom #p3 {
+#bottom #p3-1 {
     justify-content: flex-start;
 }
 
-#p3_button {
+#p3-1_button {
     border: none;
     width: 150px;
     height: 120px;
@@ -462,4 +462,53 @@ body {
     100% {
         transform: rotate(720deg) scale(1);
     }
+}
+
+
+/* P3-2 */
+#p3-2 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.303);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#p3-2 #content{
+    width: 80%;
+    height: 60%;
+    background-color: #ffe194;
+    border-radius: 15px;
+    border: #fd6e00 solid 5px;
+    display: flex;
+    position: absolute;
+    
+}
+#p3-2 #content #title{
+    font-size: 25px;
+    text-align: center;
+    height: 10px;
+    color: #fd6e00;
+}
+#p3-2 #content #text{
+    margin: 15px;
+    font-size: 14.5px;
+}
+#p3-2 #content #p3-2_close{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+#p3-2 #content #p3-2_close #img{
+    width: 25px;
+    height: 25px;
+    display: flex;
+    margin: 10px;
 }
