@@ -132,8 +132,10 @@ function playChildAnimations(parentElement,state) {
     const childElements = parentElement.querySelectorAll('*');
     childElements.forEach(childElement => {
         if(state){
+            parentElement.style.animationPlayState = 'running';
             childElement.style.animationPlayState = 'running';
         }else{
+            parentElement.style.animationPlayState = 'paused';
             childElement.style.animationPlayState = 'paused';
         }
     });
